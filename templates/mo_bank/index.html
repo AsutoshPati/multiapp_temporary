@@ -1,0 +1,169 @@
+<!--
+    Author Name:
+
+-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mo Bank - Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!-- Bootstrap -->
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <!-- End of Bootstrap libraries-->
+        <script src="{% static 'bootstrap/js/a076d05399.js' %}"></script>
+        <link rel="icon" href="{% static 'mo_bank/images/logo_old.png' %}" sizes="16x16">
+        <style>
+            body{
+                background-image: linear-gradient(to bottom, #dcfaf0, #96fac8);
+            }
+            .container-body{
+                width: 90%;
+                position: relative;
+                top: -30px;
+                z-index: 1;
+                box-shadow: 0px -5px 20px 0 rgba(0, 0, 0, 0.19);
+                border-radius: 10px;
+            }
+            .footer{
+				text-align: right;
+				background: #0d6646;
+				color: white;
+				width: 100%;
+                position: relative;
+                bottom: 0px;
+                z-index: 2;
+                padding: 10px 0 10px 0;
+                margin-top: -45px;
+            }
+        </style>
+        <script>
+            function showLabel(label){
+                if(label == "U"){
+                    document.getElementById("label_username").style.visibility = "visible";
+                    document.getElementById("username").placeholder = "";
+                }
+                else if(label == "P"){
+                    document.getElementById("label_password").style.visibility = "visible";
+                    document.getElementById("password").placeholder = "";
+                }
+            }
+            function decideLabel(label){
+                if(label == "U"){
+                    if(!document.getElementById("username").value){
+                        document.getElementById("label_username").style.visibility = "hidden";
+                        document.getElementById("username").placeholder = "Username";
+                    }
+                }
+                else if(label == "P"){
+                    if(!document.getElementById("password").value){
+                        document.getElementById("label_password").style.visibility = "hidden";
+                        document.getElementById("password").placeholder = "Password";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Navigation Bar-->
+        <nav class="navbar navbar-expand-md bg-light navbar-light" style="box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <!-- Give The logo here -->
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'mo_bank/images/logo long.png' %}" alt="logo" style="width: 200px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">UPI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Fooding</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Author</a>
+                    </li>    
+                </ul>
+            </div>  
+        </nav>
+
+        <div class="navbar-expand-md" style="width: 100%;">
+            <!-- Header -->
+            <div class="jumbotron-fluid" style="text-align:center; background-color: #0d6646; color: white;">
+                <div class="container-fluid text-center" style="padding: 0px 0px 40px 0px;">
+                    <span style="font-size: 30px; font-weight: bold;">Online Banking</span>
+                </div>
+            </div>
+        </div>
+        <!-- Container -->
+        <div class="container-fluid text-center container-body" style="background-color: white;">
+            <div class="row" style="padding: 30px 30px 10px 30px;">
+                <div class="col-sm-6 text-left" style="padding: 0 20px 20px 20px;">
+                    <center>
+                        <span style="font-size: 30px; color: #0d6646; font-weight: bold;">Banking Login</span>
+                    </center><br>
+                    <span id="label_username" style="visibility: hidden;"><b>Username</b></span><br>
+                    <input type="text" class="form-control form-control-md" name="username" id="username" placeholder="Username" onfocus="showLabel('U')" onfocusout="decideLabel('U')" style="border: none; border-bottom: 2px solid#0d6646; font-weight: bold;"><br>
+                    <span id="label_password" style="visibility: hidden;"><b>Password</b></span><br>
+                    <input type="password" class="form-control form-control-md" name="password" id="password" placeholder="Password" onfocus="showLabel('P')" onfocusout="decideLabel('P')" style="border: none; border-bottom: 2px solid#0d6646; font-weight: bold;"><br>
+                    <center>
+                        <button type="button" class="btn btn-outline-success" style="width: 70%;"><b>Login</b></button><br><br>
+                    </center>
+                    <span><i><a href="#">forgot user name?</a></i> &emsp; | &emsp; </span>
+                    <span><i><a href="#">forgot password?</a></i></span><br>
+                    <span><i>new to our bank? don't worry just <a href="mobank/register">register here</a></i></span>><br>
+                </div>
+                <div class="col-sm-6 text-justify" style="background-color:#dcfaf0; padding: 20px 20px 0px 20px; border-radius: 20px;">
+                    <b>Here are some tips for you:</b><br>
+                    <br><b>1. Avoid Using Public Wi-Fi or Use VPN software</b><br>
+                    The biggest threat of an open Wi-Fi network is that the hacker can sit in between the end user and the hotspot and can trace all the data without any difficulty.<br>
+                    <br><b>2. Change your password regularly and ensure it's a strong one</b><br>
+                    It is important to keep your account safe and helps you maintain confidentiality. And needless to say, don't share your details with anyone.<br>
+                    <br><b>3. Subscribe for mobile notifications</b><br>
+                    If you haven't done it already, do it now. These notifications will alert you quickly of any suspicious transaction.<br>
+                </div>
+            </div>
+            <div class="row" style="padding: 10px 30px 10px 30px;">
+                <div class="col-sm-2 text-center" style="background-color:lavenderblush; border-radius: 20px 0px 0px 20px;">
+                    <img src="{% static 'mo_bank/images/info_home.png' %}" alt="info" style="width: 120px; padding: 20px;">
+                </div>
+                <div class="col-sm-10 text-justify" style="background-color:lavenderblush; padding: 20px; border-radius: 0 20px 20px 0;">
+                        NEVER respond to any popup, SMS or phone call, no matter how appealing or official looking, seeking your personal information such as username, password(s), mobile number, ATM card details, etc. Such communications are sent or created by fraudsters to trick you into parting with credentials. 
+                </div>
+            </div>
+            <div class="row" style="padding: 10px 30px 40px 30px;">
+                <div class="col-sm-2 text-center" style="background-color:#dcfaf0; border-radius: 20px 0px 0px 20px;">
+                    <img src="{% static 'mo_bank/images/shield_logo.png' %}" alt="info" style="width: 120px; padding: 20px;">
+                </div>
+                <div class="col-sm-10 text-justify" style="background-color:#dcfaf0; padding: 30px 30px 30px 30px; border-radius: 0 20px 20px 0;">
+                    This site is certified as a secure and trusted site. All information sent or received in this site is encrypted using 256-bit encryption.
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <div style="text-align: left; position: absolute; left: 20px; overflow: hidden;">
+                    Connect with: &emsp;
+                    <!-- Google+ --><i class='fab' style='font-size:24px; cursor: pointer;' onclick="alert('Google has shut down this feature since 2nd april 2019')">&#xf0d4;</i> &emsp; | &emsp;
+                    <!-- Twitter --><i class='fab' style='font-size: 24px; cursor: pointer;' onclick="window.open('https://twitter.com/AsutoshPati12', '_blank')">&#xf081;</i> &emsp; | &emsp;
+                    <!-- Whatsapp --><i class='fab' style='font-size: 24px; cursor: pointer;' onclick="window.open('https://wa.me/917538935398', '_blank')">&#xf40c;</i> &emsp; | &emsp;
+                    <!-- Facebook --><i class='fab' style='font-size: 24px; cursor: pointer;' onclick="window.open('https://www.facebook.com/asutosh.pati.33', '_blank')">&#xf082;</i> &emsp; | &emsp;
+                    <!-- Instagram --><i class='fab' style='font-size: 24px; cursor: pointer;' onclick="window.open('https://www.instagram.com/asutosh_pati/?hl=en', '_blank')">&#xf16d;</i> &emsp; | &emsp;
+                    <!-- Github --><i class='fab' style='font-size: 24px; cursor: pointer;' onclick="window.open('https://github.com/AsutoshPati?tab=repositories', '_blank')">&#xf092;</i> &emsp; | &emsp;
+                    <!-- Pintrest --><i class='fab' style='font-size: 24px; cursor: pointer;' onclick="alert('This is just an icon')">&#xf0d3;</i> &emsp; | &emsp;
+                    <!-- Reddit --><i class='fab' style='font-size: 24px; cursor: pointer;' onclick="alert('This is just an icon')">&#xf1a2;</i> &emsp; | &emsp;
+            </div>
+            <div>
+                This site is created by <b>Asutosh Pati</b> &nbsp;<br>
+                made with python &nbsp;
+                <!-- Python -->
+                <i class='fab' style='font-size: 24px; cursor: pointer;' onclick="window.open('https://en.wikipedia.org/wiki/Python_(programming_language)', '_blank')">&#xf3e2;</i> &nbsp;
+            </div>
+        </div>
+    </body>
+</html>

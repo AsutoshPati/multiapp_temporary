@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mo Bank - Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!-- Bootstrap -->
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <!-- End of Bootstrap libraries-->
+        <script src="{% static 'bootstrap/js/a076d05399.js' %}"></script>
+        <link rel="icon" href="{% static 'mo_bank/images/logo_old.png' %}" sizes="16x16">
+        <style>
+            html{
+                height: 100%;
+                width: 100%;
+            }
+            body{
+                background-image: url("{% static 'mo_bank/images/bg_register.jpg' %}");
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+        <script>
+            $(window).on('resize', function() {
+                var win = $(this);
+                if (win.width() > 600) {
+                    $('#123').addClass('btn-lg');
+                }
+                else {
+                    $('#123').removeClass('btn-lg');
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid" style="padding: 50px 0 0 0;">
+            <div class="row">
+                <div class="col-sm-6 bg-primary" padding="0 0 0 70px;">
+                    Back to login
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 bg-primary">
+                    .col-sm-6
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
